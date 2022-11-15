@@ -2,8 +2,8 @@ package gorankvote_test
 
 import (
 	"fmt"
+	"github.com/SINTEF-Infosec/gorankvote"
 	"github.com/stretchr/testify/assert"
-	"gorankvote"
 	"testing"
 )
 
@@ -224,7 +224,7 @@ func assertListsAlmostEqual(t *testing.T, list1, list2 []float64, error float64)
 	assert.Equal(t, len(list1), len(list2), "lists length should be equal")
 
 	for i := 0; i < len(list1); i++ {
-		if list1[i] - list2[i] >= error {
+		if list1[i]-list2[i] >= error {
 			assert.Fail(t, fmt.Sprintf("values are too different: %f / %f", list1[i], list2[i]))
 		}
 	}
